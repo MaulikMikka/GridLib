@@ -1,17 +1,7 @@
-publish-gpr:
-  needs: build
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/download-artifact@v2
-      with:
-        name: vscode-remark
-    - run: npm install
-    - uses: actions/setup-node@v2
-      with:
-        registry-url: https://npm.pkg.github.com
-        scope: '@remarkjs'
-    - name: npm config
-      run: npm config set registry https://npm.pkg.github.com/@remarkjs
-    - run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+- name: Download a Build Artifact
+  uses: actions/download-artifact@v2.0.10
+  with:
+    # Artifact name
+    name: # optional
+    # Destination path
+    path: # optional
