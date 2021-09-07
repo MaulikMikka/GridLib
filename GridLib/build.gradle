@@ -43,7 +43,7 @@ def getVersionName = { ->
 }
 
 def getArtificatId = { ->
-    return "GridLib" // Replace with library name ID
+    return "gridlib" // Replace with library name ID
 }
 
 
@@ -65,12 +65,12 @@ publishing {
             /** Configure path of your package repository on Github
              *  Replace GITHUB_USERID with your/organisation Github userID and REPOSITORY with the repository name on GitHub
              */
-            url = uri("https://github.com/MaulikMikka/GridLib")
+            url = uri("https://maven.pkg.github.com/MaulikMikka/GridLib")
 
             credentials {
                 /**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key=PERSONAL_ACCESS_TOKEN**/
-                username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
-                password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+                username = githubProperties['gpr.usr']
+                password = githubProperties['gpr.key']
             }
         }
     }
