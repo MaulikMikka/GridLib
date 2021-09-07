@@ -2,7 +2,7 @@ apply plugin: 'maven-publish'
 
 def LIB_GROUP_ID = 'com.grid.lib'
 def LIB_ARTIFACT_ID = 'GridLib'
-def LIB_VERSION = '1.0.7'
+def LIB_VERSION = '1.0.8'
 
 task sourceJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
