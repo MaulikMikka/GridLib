@@ -10,8 +10,7 @@ task sourceJar(type: Jar) {
 }
 
 /**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key=PERSONAL_ACCESS_TOKEN**/
-def githubProperties = new Properties()
-githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+
 
 publishing {
     repositories {
@@ -19,8 +18,8 @@ publishing {
             name = "GithubPackages"
             url = uri("https://maven.pkg.github.com/MaulikMikka/GridLib")
             credentials {
-                username = githubProperties['gpr.usr']
-                password = githubProperties['gpr.key']
+                username = System.getenv("GPR_USER")
+                password = System.getenv("GPR_API_KEY")
             }
         }
 
