@@ -19,12 +19,12 @@ publishing {
         maven {
             name = "GithubPackages"
             url = uri("https://maven.pkg.github.com/MaulikMikka/GridLib")
-//            credentials {
-//                username = secretsProperties.get("GPR_USER")
-//                password = secretsProperties.get("GPR_API_KEY")
-//            }
+            credentials {
+                username = secretsProperties.get("GPR_USER")
+                password = secretsProperties.get("GPR_API_KEY")
+            }
         }
-
+//
     }
     publications {
         bar(MavenPublication) {
