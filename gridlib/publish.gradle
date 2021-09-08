@@ -9,9 +9,10 @@ task sourceJar(type: Jar) {
     classifier "sources"
 }
 
-def secretsPropertiesFile = rootProject.file("./secrets.properties")
+def secretsPropertiesFile = project.rootProject.file("./secrets.properties")
 def secretsProperties = new Properties()
 secretsProperties.load(new FileInputStream(secretsPropertiesFile))
+/**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key=PERSONAL_ACCESS_TOKEN**/
 
 
 publishing {
@@ -20,8 +21,8 @@ publishing {
             name = "GithubPackages"
             url = uri("https://maven.pkg.github.com/MaulikMikka/GridLib")
             credentials {
-                username = properties.get("GPR_USER")
-                password = properties.get("GPR_API_KEY")
+                username = System.getenv("GPR_USER")
+                password = System.getenv("GPR_KEY")
             }
         }
 
