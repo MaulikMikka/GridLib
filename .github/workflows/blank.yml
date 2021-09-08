@@ -41,7 +41,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build AAR ⚙️🛠
-        run: bash ./gradlew :simplelibrary:assemble
+        run: bash ./gradlew :GridLib:assemble
 
       - name: Publish to GitHub Package Registry 🚀
         run: bash ./gradlew :gridLib:publish
