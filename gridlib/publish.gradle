@@ -11,7 +11,7 @@ task sourceJar(type: Jar) {
 
 /**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key=PERSONAL_ACCESS_TOKEN**/
 Properties properties = new Properties()
-properties.load(project.rootProject.file('secrets.properties').newDataInputStream())
+properties.load(project.rootProject.file('./secrets.properties').newDataInputStream())
 
 publishing {
     repositories {
