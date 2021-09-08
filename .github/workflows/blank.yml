@@ -44,7 +44,7 @@ jobs:
         run: bash ./gradlew :GridLib:assemble
 
       - name: File 🚀
-        run:  base64 -d > ./secrets.properties
+        run: echo "$SECRETS_PROPERTIES" |  base64 -d > ./secrets.properties
         env:
           SECRETS_PROPERTIES: ${{ secrets.SECRETS_PROPERTIES }}
 
