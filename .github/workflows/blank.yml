@@ -40,6 +40,11 @@ jobs:
       - name: Grant Permission for Gradlew to Execute
         run: chmod +x gradlew
 
+       - name: Decode secrets.properties file
+              env:
+                SECRETS_PROPERTIES: ${{ secrets.SECRETS_PROPERTIES }}
+              run: echo "$SECRETS_PROPERTIES" | base64 -d > ./secrets.properties
+
       - name: Build AAR ⚙️🛠
         run: bash ./gradlew :GridLib:assemble
 
